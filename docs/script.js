@@ -1,2 +1,2 @@
-"use strict";document.querySelector("#github").addEventListener("click",(function(){window.open("https://github.com/stanislavcodes","_blank")})),document.querySelector("#codepen").addEventListener("click",(function(){window.open("// https://codepen.io/stanislavcodes","_blank")})),document.querySelector("#twitter").addEventListener("click",(function(){window.open("https://twitter.com/stanislav_codes","_blank")})),document.querySelector("#instagram").addEventListener("click",(function(){window.open("https://www.instagram.com/stanislav.codes","_blank")})),document.querySelector("#linkedin").addEventListener("click",(function(){window.open("https://www.linkedin.com/in/stanislavcodes","_blank")}));
+"use strict";
 //# sourceMappingURL=script.js.map

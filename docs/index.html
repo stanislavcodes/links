@@ -1,8 +1,11 @@
 <!DOCTYPE html >
 <html> 
   <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <title>Links | stanislav.codes</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu&amp;display=swap"/>
     <link rel="stylesheet" href="style.css"/>
   </head>
@@ -45,6 +48,22 @@
         </div>
       </ul>
     </section>
-    <script src="script.js"> </script>
+    <script>
+      document.querySelector("#github").addEventListener("click", () => {
+        window.open("https://github.com/stanislavcodes", "_blank");
+      });
+      document.querySelector("#codepen").addEventListener("click", () => {
+        window.open("// https://codepen.io/stanislavcodes", "_blank");
+      });
+      document.querySelector("#twitter").addEventListener("click", () => {
+        window.open("https://twitter.com/stanislav_codes", "_blank");
+      });
+      document.querySelector("#instagram").addEventListener("click", () => {
+        window.open("https://www.instagram.com/stanislav.codes", "_blank");
+      });
+      document.querySelector("#linkedin").addEventListener("click", () => {
+        window.open("https://www.linkedin.com/in/stanislavcodes", "_blank");
+      });
+    </script>
   </body>
 </html>
