@@ -70,7 +70,13 @@ function watchTask() {
 }
 
 // Default Gulp Task
-exports.watch = series(pugTask, scssTask, jsTask, browserSyncServe, watchTask);
+exports.default = series(
+  pugTask,
+  scssTask,
+  jsTask,
+  browserSyncServe,
+  watchTask
+);
 
 // Build Gulp Task
 exports.build = series(pugTask, scssTask, jsTask);
