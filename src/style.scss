@@ -20,7 +20,7 @@ html {
 }
 
 h1 {
-  font-size: rem(36);
+  font-size: rem(56);
 }
 
 body {
@@ -32,7 +32,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: rem(36) 0;
+  padding: rem(64) 0;
   // background-color: yellowgreen;
 }
 
@@ -47,20 +47,20 @@ section {
 
 ul {
   width: 100%;
-  padding: 0 rem(24);
+  padding: 0 rem(84);
   list-style: none;
 
   .link-box {
     display: flex;
-    height: rem(88);
-    border-radius: rem(10);
+    // height: rem(160);
+    border-radius: rem(32);
     background-color: #ffffff;
-    padding: 0 rem(12);
-    margin-bottom: rem(20);
+    padding: rem(32);
+    margin-bottom: rem(32);
 
     svg {
       fill: $color-text;
-      width: rem(64);
+      width: rem(128);
     }
 
     li {
@@ -70,7 +70,7 @@ ul {
       width: calc(100% - rem(64));
 
       a {
-        font-size: rem(36);
+        font-size: rem(64);
         text-decoration: none;
         color: $color-text;
       }
