@@ -33,12 +33,12 @@ function scssTask() {
 }
 
 // JavaScript Task
-function jsTask() {
-  return src("src/script.js", { sourcemaps: true })
-    .pipe(babel({ presets: ["@babel/preset-env"] }))
-    .pipe(terser())
-    .pipe(dest("docs", { sourcemaps: "." }));
-}
+// function jsTask() {
+//   return src("src/script.js", { sourcemaps: true })
+//     .pipe(babel({ presets: ["@babel/preset-env"] }))
+//     .pipe(terser())
+//     .pipe(dest("docs", { sourcemaps: "." }));
+// }
 
 // Browsersync
 function browserSyncServe(cb) {
@@ -63,20 +63,20 @@ function browserSyncReload(cb) {
 // Watch Task
 function watchTask() {
   // watch("*.html", browserSyncReload);
+  // watch(
+  //   ["src/**/*.pug", "src/**/*.scss", "src/**/*.js"],
+  //   series(pugTask, scssTask, jsTask, browserSyncReload)
+  // );
   watch(
-    ["src/**/*.pug", "src/**/*.scss", "src/**/*.js"],
-    series(pugTask, scssTask, jsTask, browserSyncReload)
+    ["src/**/*.pug", "src/**/*.scss"],
+    series(pugTask, scssTask, browserSyncReload)
   );
 }
 
 // Default Gulp Task
-exports.default = series(
-  pugTask,
-  scssTask,
-  jsTask,
-  browserSyncServe,
-  watchTask
-);
+// exports.default = series( pugTask, scssTask, jsTask, browserSyncServe, watchTask );
+exports.default = series(pugTask, scssTask, browserSyncServe, watchTask);
 
 // Build Gulp Task
-exports.build = series(pugTask, scssTask, jsTask);
+// exports.build = series(pugTask, scssTask, jsTask);
+exports.build = series(pugTask, scssTask);

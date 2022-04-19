@@ -20,7 +20,11 @@ html {
 }
 
 h1 {
-  font-size: rem(56);
+  font-size: rem(36);
+  &::selection {
+    background-color: $color-text;
+    color: $color-bg;
+  }
 }
 
 body {
@@ -32,7 +36,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: rem(64) 0;
+  padding: rem(48) 0;
   // background-color: yellowgreen;
 }
 
@@ -47,33 +51,61 @@ section {
 
 ul {
   width: 100%;
-  padding: 0 rem(84);
+  padding: 0 rem(24);
   list-style: none;
 
-  .link-box {
+  @media screen and (min-width: 800px) {
+    width: rem(576);
+  }
+
+  button.link-box {
+    width: 100%;
+    height: rem(112);
     display: flex;
-    // height: rem(160);
-    border-radius: rem(32);
+    align-items: center;
+    border-radius: rem(16);
     background-color: #ffffff;
-    padding: rem(32);
-    margin-bottom: rem(32);
+    padding: rem(16);
+    margin-bottom: rem(24);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: 4px dashed transparent;
+    transition: all ease-in 200ms;
 
     svg {
       fill: $color-text;
-      width: rem(128);
+      width: rem(64);
     }
 
     li {
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       width: calc(100% - rem(64));
 
       a {
-        font-size: rem(64);
+        font-size: rem(36);
         text-decoration: none;
         color: $color-text;
+        &:focus {
+          border-radius: 4px;
+          outline: 2px dashed $color-text;
+        }
+        &::selection {
+          background-color: $color-text;
+          color: $color-bg;
+        }
       }
+    }
+
+    &:focus {
+      outline: 4px dashed $color-text;
+    }
+    &:active {
+      background-color: $color-bg;
+      border: 4px dashed $color-text;
     }
   }
 }
