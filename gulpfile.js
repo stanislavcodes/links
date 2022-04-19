@@ -21,7 +21,7 @@ function pugTask() {
         pretty: true,
       })
     )
-    .pipe(dest("dist"));
+    .pipe(dest("docs"));
 }
 
 // Sass Task
@@ -29,7 +29,7 @@ function scssTask() {
   return src("src/style.scss", { sourcemaps: true })
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(dest("dist", { sourcemaps: "." }));
+    .pipe(dest("docs", { sourcemaps: "." }));
 }
 
 // JavaScript Task
@@ -37,14 +37,14 @@ function jsTask() {
   return src("src/script.js", { sourcemaps: true })
     .pipe(babel({ presets: ["@babel/preset-env"] }))
     .pipe(terser())
-    .pipe(dest("dist", { sourcemaps: "." }));
+    .pipe(dest("docs", { sourcemaps: "." }));
 }
 
 // Browsersync
 function browserSyncServe(cb) {
   browsersync.init({
     server: {
-      baseDir: "dist/",
+      baseDir: "docs/",
     },
     notify: {
       styles: {

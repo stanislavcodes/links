@@ -1,3 +1,79 @@
-*, *::before, *::after {
-  
+@function rem($size) {
+  $result: calc($size / 16);
+  @return $result + rem;
+}
+
+$color-bg: #eeeeee;
+$color-text: #404040;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1 {
+  font-size: rem(36);
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: rem(36) 0;
+  // background-color: yellowgreen;
+}
+
+section {
+  width: 100%;
+  // min-height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  // background-color: orangered;
+}
+
+ul {
+  width: 100%;
+  padding: 0 rem(24);
+  list-style: none;
+
+  .link-box {
+    display: flex;
+    height: rem(88);
+    border-radius: rem(10);
+    background-color: #ffffff;
+    padding: 0 rem(12);
+    margin-bottom: rem(20);
+
+    svg {
+      fill: $color-text;
+      width: rem(64);
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% - rem(64));
+
+      a {
+        font-size: rem(36);
+        text-decoration: none;
+        color: $color-text;
+      }
+    }
+  }
 }
